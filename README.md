@@ -94,7 +94,7 @@ CHURN-PREDICTION-BANKING/
 ├── .gitignore
 ├── README.md
 └── requirements.txt         # Liste des dépendances Python nécessaires.
-
+```
 ---
 
 ## ▶️ Comment reproduire le projet
@@ -108,6 +108,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
