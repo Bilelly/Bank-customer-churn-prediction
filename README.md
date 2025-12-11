@@ -68,16 +68,33 @@ En contexte de churn, il est **plus critique de ne pas manquer un client à risq
 ---
 
 ## 🗂️ Structure du projet
-CHURN-PREDICTION-BANKING/
-├── data/ # Données à chaque étape
-├── models/ # Modèle final sérialisé (best_model.pkl)
-├── notebooks/ # Workflow complet en 5 étapes
-├── report/ # Rapport EDA HTML et figures
-├── src/ # Fonctions utilitaires modulaires
-├── requirements.txt # Dépendances
-├── .gitignore
-└── README.md
 
+CHURN-PREDICTION-BANKING/
+├── data/
+│   ├── brut_data.csv
+│   ├── cleaned_data.csv
+│   └── preprocessed_data.csv
+├── models/
+│   └── best_model.pkl
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_data_modeling.ipynb
+│   ├── 04_model_optimisation.ipynb
+│   └── 05_model_evaluation_export.ipynb
+├── report/
+│   ├── figure/
+│   └── eda_report.html
+├── src/
+│   ├── __pycache__/
+│   ├── EvaluationFunction.py
+│   ├── helperfunction.py
+│   ├── OptunaXGB.py
+│   ├── RemoveOutliers.py
+│   └── ValidationCross.py
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ---
 
@@ -92,5 +109,6 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
