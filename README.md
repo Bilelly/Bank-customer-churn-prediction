@@ -72,28 +72,28 @@ En contexte de churn, il est **plus critique de ne pas manquer un client à risq
 ```text
 CHURN-PREDICTION-BANKING/
 ├── data/
-│   ├── brut_data.csv        # Données originales brutes (jamais modifiées).
-│   ├── cleaned_data.csv     # Données après nettoyage (gestion des manquants, doublons).
-│   └── preprocessed_data.csv# Données prêtes pour le modèle (encodage, scaling).
+│   ├── brut_data.csv        # Données brutes.
+│   ├── cleaned_data.csv     # Données après nettoyage.
+│   └── preprocessed_data.csv# Données prêtes pour le modèle.
 ├── models/
-│   └── best_model.pkl       # Le modèle final sérialisé (.pkl), prêt pour la production.
+│   └── best_model.pkl       
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb    # Exploration des données et analyse descriptive.
 │   ├── 02_data_preprocessing.ipynb  # Transformations des features.
-│   ├── 03_data_modeling.ipynb       # Entraînement des modèles de base (Baseline).
-│   ├── 04_model_optimisation.ipynb  # Tuning des hyperparamètres (ex: Optuna).
-│   └── 05_model_evaluation_export.ipynb # Évaluation finale et exportation du modèle.
+│   ├── 03_data_modeling.ipynb       # Entraînement des modèles de base.
+│   ├── 04_model_optimisation.ipynb  # Tuning des hyperparamètres Optuna.
+│   └── 05_model_evaluation_export.ipynb # Évaluation finale .
 ├── report/
-│   ├── figure/              # Visualisations clés et graphiques.
-│   └── eda_report.html      # Rapport d'analyse exploratoire des données (généré automatiquement).
-├── src/                     # Contient les modules Python réutilisables.
+│   ├── figure/              
+│   └── eda_report.html      
+├── src/                     
 │   ├── EvaluationFunction.py# Fonction standardisée pour calculer les métriques.
 │   ├── OptunaXGB.py         # Script pour l'optimisation des hyperparamètres d'XGBoost via Optuna.
 │   ├── RemoveOutliers.py    # Fonction pour gérer les valeurs aberrantes.
 │   └── ValidationCross.py   # Logique de validation croisée.
 ├── .gitignore
 ├── README.md
-└── requirements.txt         # Liste des dépendances Python nécessaires.
+└── requirements.txt         
 ```
 ---
 
@@ -108,6 +108,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
