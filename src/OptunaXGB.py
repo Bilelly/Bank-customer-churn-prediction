@@ -3,8 +3,8 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score
-from imblearn.over_sampling import SMOTE
 from xgboost import XGBClassifier
+
 
 RANDOM_STATE = 42
 
@@ -57,12 +57,8 @@ def objective(trial, X, y, preprocessor, scale_pos_weight):
         X_train_fold, X_val_fold = X.iloc[train_index], X.iloc[val_index]
         y_train_fold, y_val_fold = y.iloc[train_index], y.iloc[val_index]
 
-        # Apply SMOTE ONLY on training fold
-        smote = SMOTE(random_state=RANDOM_STATE)
-        X_train_smote, y_train_smote = smote.fit_resample(X_train_fold, y_train_fold)
-
         # Train pipeline
-        pipeline.fit(X_train_smote, y_train_smote)
+        pipeline.fit(X_train_fold, y_train_fold)
 
         # Predict probabilities
         y_pred_proba = pipeline.predict_proba(X_val_fold)[:, 1]
