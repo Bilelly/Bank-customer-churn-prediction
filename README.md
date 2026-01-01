@@ -79,12 +79,11 @@ CHURN-PREDICTION-BANKING/
 │   └── best_model.pkl       
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb    # Exploration des données et analyse descriptive.
-│   ├── 02_data_preprocessing.ipynb  # Transformations des features.
+│   ├── 02_data_preprocessing.ipynb  # Transformations des features et sélection des modeles.
 │   ├── 03_data_modeling.ipynb       # Entraînement des modèles de base.
-│   ├── 04_model_optimisation.ipynb  # Tuning des hyperparamètres Optuna.
-│   └── 05_model_evaluation_export.ipynb # Évaluation finale .
-├── report/
-│   ├── figure/              
+│   ├── 04_model_optimisation.ipynb  # Tuning des hyperparamètres Optuna et GridsearchCV, faire une analyse sur l'équilibration.
+│   └── 05_model_explainability.ipynb # comprendre les feautures avec shap .
+├── report/              
 │   └── eda_report.html      
 ├── src/                     
 │   ├── EvaluationFunction.py# Fonction standardisée pour calculer les métriques.
@@ -108,6 +107,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
