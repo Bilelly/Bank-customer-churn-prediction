@@ -81,12 +81,15 @@ Le projet suit une **démarche structurée en 5 notebooks** :
 ✅ **Pourquoi ces métriques ?**  
 En contexte de churn, il est **plus critique de ne pas manquer un client à risque** (haut recall) que d’avoir quelques faux positifs.
 
-### 🔍 Top 5 des features les plus influentes (SHAP)
+### 🔍 Top  des features les plus influentes (SHAP)
 1. `Ratio_Products_Age`
 2. `IsActiveMember`
 3. `Age`
 4. `Geography_Germany`
 5. `Gender_Female`
+
+<img width="787" height="940" alt="image" src="https://github.com/user-attachments/assets/6ece875a-bf32-491b-a63f-dacad2f52a13" />
+
 
 → Ces insights sont **actionnables** : par exemple, les clients allemands ou inactifs méritent une attention particulière.
 
@@ -132,6 +135,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
