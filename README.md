@@ -74,6 +74,10 @@ Le projet suit une **démarche structurée en 5 notebooks** :
 | **Recall** | 79.4 % |
 | **AUC** | 0.931 |
 
+
+<img width="1089" height="590" alt="image" src="https://github.com/user-attachments/assets/8e02fd13-c6ef-4440-8deb-5e8e78746d3b" />
+
+
 ✅ **Pourquoi ces métriques ?**  
 En contexte de churn, il est **plus critique de ne pas manquer un client à risque** (haut recall) que d’avoir quelques faux positifs.
 
@@ -128,6 +132,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
