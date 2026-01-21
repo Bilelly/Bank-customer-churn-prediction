@@ -23,9 +23,9 @@ Ce projet propose un pipeline complet de **détection proactive du churn** basé
 
 | Variable | Type | Signification |
 |----------|------|---------------|
-| **id** | int | Identifiant unique du client (à supprimer - sans valeur prédictive) |
-| **CustomerId** | int | ID client (à supprimer - sans valeur prédictive) |
-| **Surname** | string | Nom de famille du client (à supprimer - sans valeur prédictive) |
+| **id** | int | Identifiant unique du client  |
+| **CustomerId** | int | ID client |
+| **Surname** | string | Nom de famille du client |
 | **CreditScore** | int | Score de crédit du client (0-850) - indicateur de solvabilité |
 | **Geography** | string | Pays de résidence du client (France, Allemagne, Espagne) |
 | **Gender** | string | Genre du client (Male, Female) |
@@ -135,6 +135,7 @@ pip install -r requirements.txt
 
 # 3. Explorer les notebooks dans l'ordre
 jupyter notebook
+
 
 
 
