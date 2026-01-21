@@ -19,6 +19,27 @@ Ce projet propose un pipeline complet de **détection proactive du churn** basé
 
 ---
 
+## Dictionnaire des Significations
+
+| Variable | Type | Signification |
+|----------|------|---------------|
+| **id** | int | Identifiant unique du client (à supprimer - sans valeur prédictive) |
+| **CustomerId** | int | ID client (à supprimer - sans valeur prédictive) |
+| **Surname** | string | Nom de famille du client (à supprimer - sans valeur prédictive) |
+| **CreditScore** | int | Score de crédit du client (0-850) - indicateur de solvabilité |
+| **Geography** | string | Pays de résidence du client (France, Allemagne, Espagne) |
+| **Gender** | string | Genre du client (Male, Female) |
+| **Age** | int | Âge du client en années |
+| **Tenure** | int | Durée d'adhésion à la banque en années |
+| **Balance** | float | Solde du compte bancaire en euros |
+| **NumOfProducts** | int | Nombre de produits bancaires utilisés (1-4) |
+| **HasCrCard** | binary | Possède une carte de crédit (0=Non, 1=Oui) |
+| **IsActiveMember** | binary | Membre actif (0=Inactif, 1=Actif) - activité financière régulière |
+| **EstimatedSalary** | float | Salaire annuel estimé en euros |
+| **Exited** | binary | **TARGET** - Churn (0=Client reste, 1=Client part) |
+
+---
+
 ## 📊 Données
 
 - **Dataset** : 15 000 clients bancaires simulés
