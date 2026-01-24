@@ -1,4 +1,4 @@
-# 🏦 Prédiction de l’Attrition Client en Banque  
+#  Prédiction de l’Attrition Client en Banque  
 *Par Bilal Sayoud – Data Scientist*
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 Objectif du projet
+##  Objectif du projet
 
 L’attrition client est un enjeu stratégique pour les banques. Identifier en amont les clients susceptibles de quitter permet de :
 - **Anticiper les pertes de revenus**
@@ -17,7 +17,21 @@ L’attrition client est un enjeu stratégique pour les banques. Identifier en a
 
 Ce projet propose un pipeline complet de **détection proactive du churn** basé sur des données comportementales, démographiques et financières.
 
+
 ---
+
+## 📊 Données
+
+- **Dataset** : 15 000 clients bancaires simulés
+- **Target** : `Exited` (1 = client parti, 0 = client actif)
+- **Déséquilibre** : ~20 % de churn → problème de classification binaire déséquilibrée
+- **Fichiers** :
+  - `brut_data.csv` : données brutes
+  - `cleaned_data.csv` : après suppression des colonnes inutiles
+  - `preprocessed_data.csv` : après feature engineering
+
+---
+
 
 ## Dictionnaire des Significations
 
@@ -37,19 +51,6 @@ Ce projet propose un pipeline complet de **détection proactive du churn** basé
 | **IsActiveMember** | binary | Membre actif (0=Inactif, 1=Actif) - activité financière régulière |
 | **EstimatedSalary** | float | Salaire annuel estimé en euros |
 | **Exited** | binary | **TARGET** - Churn (0=Client reste, 1=Client part) |
-
----
-
-## 📊 Données
-
-- **Dataset** : 15 000 clients bancaires simulés
-- **Target** : `Exited` (1 = client parti, 0 = client actif)
-- **Déséquilibre** : ~20 % de churn → problème de classification binaire déséquilibrée
-- **Fichiers** :
-  - `brut_data.csv` : données brutes
-  - `cleaned_data.csv` : après suppression des colonnes inutiles
-  - `preprocessed_data.csv` : après feature engineering
-
 ---
 
 ## 🔧 Pipeline de Data Science
@@ -81,7 +82,7 @@ Le projet suit une **démarche structurée en 5 notebooks** :
 ✅ **Pourquoi ces métriques ?**  
 En contexte de churn, il est **plus critique de ne pas manquer un client à risque** (haut recall) que d’avoir quelques faux positifs.
 
-### 🔍 Top  des features les plus influentes (SHAP)
+###  Top  des features les plus influentes (SHAP)
 1. `Ratio_Products_Age`
 2. `IsActiveMember`
 3. `Age`
