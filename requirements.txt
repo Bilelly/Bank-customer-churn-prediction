@@ -9,3 +9,4 @@ xgboost>=1.5.0
 shap>=0.40.0
 jupyter>=1.0.0
 ipython>=7.0.0
+streamlit>=1.28.0
