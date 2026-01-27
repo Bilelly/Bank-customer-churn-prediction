@@ -4,8 +4,8 @@ import joblib
 import numpy as np
 from pathlib import Path
 
-st.set_page_config(page_title="🏦 Churn Prediction", layout="centered")
-st.title("🏦 Prédiction de Churn Bancaire")
+st.set_page_config(page_title=" Churn Prediction", layout="centered")
+st.title(" Prédiction de Churn Bancaire")
 
 @st.cache_resource
 def load_model():
@@ -23,7 +23,7 @@ model = load_model()
 salary_by_geo, balance_mean = get_preprocessing_stats()
 
 # === Formulaire utilisateur ===
-st.subheader("👤 Informations du client")
+st.subheader(" Informations du client")
 
 col1, col2 = st.columns(2)
 
@@ -41,8 +41,8 @@ with col2:
     gender = st.selectbox("Genre", ["Male", "Female"])
     geography = st.selectbox("Pays", ["France", "Spain", "Germany"])
 
-# === Préparation des features (exactement comme dans le notebook) ===
-if st.button("🚀 Prédire", type="primary", use_container_width=True):
+# === Préparation des features
+if st.button(" Prédire", type="primary", use_container_width=True):
     # Valeurs binaires
     HasCrCard = 1 if has_credit_card == "Oui" else 0
     IsActiveMember = 1 if is_active == "Oui" else 0
@@ -50,11 +50,11 @@ if st.button("🚀 Prédire", type="primary", use_container_width=True):
     # Éviter division par zéro
     safe_age = max(age, 1)
     
-    # Calcul des features dérivées (exactement comme dans votre notebook)
+    # Calcul des features dérivées 
     Ratio_Balance_Salary = balance / max(salary, 1)
     Ratio_Balance_Age = balance / safe_age
     Ratio_Salary_Age = salary / safe_age
-    Engagement_Score = IsActiveMember + num_products + HasCrCard  # CORRIGÉ
+    Engagement_Score = IsActiveMember + num_products + HasCrCard  
     Ratio_Products_Age = num_products / safe_age
     geo_mean_salary = salary_by_geo.get(geography, salary)
     Relative_Salary = salary / max(geo_mean_salary, 1)
@@ -62,20 +62,20 @@ if st.button("🚀 Prédire", type="primary", use_container_width=True):
     Zero_Balance_HasCrCard = int((balance == 0) and (HasCrCard == 1))
     Low_Balance_Active = int((balance < balance_mean) and (IsActiveMember == 1))
     Active_HasCrCard = IsActiveMember * HasCrCard
-    Log_Salary = np.log1p(salary)  # log1p = log(1+x)
+    Log_Salary = np.log1p(salary)  # log(1 + salary) pour éviter log(0)
 
-    # 🔑 CORRECTION 1 : Noms de colonnes EN ANGLAIS (exactement comme le modèle)
+    # Préparation des features
     features = {
         'CreditScore': credit_score,
-        'Geography': geography,          # ← Pas 'Géographie'
-        'Gender': gender,                # ← Pas 'Genre'
+        'Geography': geography,          
+        'Gender': gender,                
         'Age': age,
-        'Tenure': tenure,                # ← Pas 'Titularisation'
-        'Balance': balance,              # ← Pas 'Équilibre'
+        'Tenure': tenure,                
+        'Balance': balance,              
         'NumOfProducts': num_products,
         'HasCrCard': HasCrCard,
-        'IsActiveMember': IsActiveMember,  # ← Pas 'IsMembreActif'
-        'EstimatedSalary': salary,       # ← Pas 'Salaire estimé'
+        'IsActiveMember': IsActiveMember,  
+        'EstimatedSalary': salary,       
         'Ratio_Balance_Salary': Ratio_Balance_Salary,
         'Ratio_Balance_Age': Ratio_Balance_Age,
         'Ratio_Salary_Age': Ratio_Salary_Age,
@@ -92,16 +92,16 @@ if st.button("🚀 Prédire", type="primary", use_container_width=True):
     input_df = pd.DataFrame([features])
     
     try:
-        # 🔑 CORRECTION 2 : Conversion en float Python standard (pas numpy.float32)
+        #  Conversion en float Python standard
         proba = float(model.predict_proba(input_df)[0][1])
         
         risk = "🔴 ÉLEVÉ" if proba > 0.7 else "🟡 MOYEN" if proba > 0.3 else "🟢 FAIBLE"
         
         st.markdown(f"### Résultat : {risk}")
-        st.progress(min(proba, 1.0))  # ✅ Compatible avec float standard
+        st.progress(min(proba, 1.0))  
         st.metric("Probabilité de churn", f"{proba:.1%}")
         
     except Exception as e:
-        st.error(f"❌ Erreur : {str(e)}")
+        st.error(f" Erreur : {str(e)}")
         st.write("Colonnes envoyées :", list(input_df.columns))
         st.write("Colonnes attendues :", model.feature_names_in_.tolist() if hasattr(model, 'feature_names_in_') else "Non disponibles")
