@@ -7,7 +7,8 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-yellow)
 
 ---
-
+-lien vers l'application dans streamlit : https://bank-customer-churn-prediction-8vqesqvjqvogp2dqrjcrgn.streamlit.app/
+---
 ##  Objectif du projet
 
 L’attrition client est un enjeu stratégique pour les banques. Identifier en amont les clients susceptibles de quitter permet de :
@@ -120,6 +121,7 @@ CHURN-PREDICTION-BANKING/
 │   ├── RemoveOutliers.py    # Fonction pour gérer les valeurs aberrantes.
 │   └── ValidationCross.py   # Logique de validation croisée.
 ├── .gitignore
+├── app.py
 ├── README.md
 └── requirements.txt         
 ```
