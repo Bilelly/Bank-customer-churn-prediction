@@ -23,7 +23,7 @@ model = load_model()
 salary_by_geo, balance_mean = get_preprocessing_stats()
 
 # === Formulaire utilisateur ===
-st.subheader(" Informations du client")
+st.subheader("👤 Informations du client")
 
 col1, col2 = st.columns(2)
 
@@ -42,7 +42,7 @@ with col2:
     geography = st.selectbox("Pays", ["France", "Spain", "Germany"])
 
 # === Préparation des features
-if st.button(" Prédire", type="primary", use_container_width=True):
+if st.button("🚀 Prédire", type="primary", use_container_width=True):
     # Valeurs binaires
     HasCrCard = 1 if has_credit_card == "Oui" else 0
     IsActiveMember = 1 if is_active == "Oui" else 0
@@ -95,7 +95,7 @@ if st.button(" Prédire", type="primary", use_container_width=True):
         #  Conversion en float Python standard
         proba = float(model.predict_proba(input_df)[0][1])
         
-        risk = "🔴 ÉLEVÉ" if proba > 0.7 else "🟡 MOYEN" if proba > 0.3 else "🟢 FAIBLE"
+        risk = " ÉLEVÉ" if proba > 0.7 else " MOYEN" if proba > 0.3 else " FAIBLE"
         
         st.markdown(f"### Résultat : {risk}")
         st.progress(min(proba, 1.0))  
