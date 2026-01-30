@@ -7,8 +7,12 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-yellow)
 
 ---
--lien vers l'application dans streamlit : https://bank-customer-churn-prediction-8vqesqvjqvogp2dqrjcrgn.streamlit.app/
+
+## 🚀 Démo interactive
+👉 [**Tester l'application Streamlit**](https://bank-customer-churn-prediction-8vqesqvjqvogp2dqrjcrgn.streamlit.app/)  
+*Prédisez le risque de churn en temps réel avec l'interface utilisateur*
 ---
+
 ##  Objectif du projet
 
 L’attrition client est un enjeu stratégique pour les banques. Identifier en amont les clients susceptibles de quitter permet de :
