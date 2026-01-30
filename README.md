@@ -8,9 +8,11 @@
 
 ---
 
-## 🚀 Démo interactive
-👉 [**Tester l'application Streamlit**](https://bank-customer-churn-prediction-8vqesqvjqvogp2dqrjcrgn.streamlit.app/)  
+## 🚀 Démo 
+
 *Prédisez le risque de churn en temps réel avec l'interface utilisateur*
+
+👉 [**Tester l'application Streamlit**](https://bank-customer-churn-prediction-8vqesqvjqvogp2dqrjcrgn.streamlit.app/)  
 ---
 
 ##  Objectif du projet
