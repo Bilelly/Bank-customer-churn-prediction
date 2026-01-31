@@ -1,3 +1,4 @@
+# Library imports
 import streamlit as st
 import pandas as pd
 import joblib
@@ -54,14 +55,14 @@ with tab1:
         age = st.number_input("Âge", 18, 100, 35)
         tenure = st.number_input("Ancienneté (ans)", 0, 40, 5, help="Nombre d'années avec la banque")
         balance = st.number_input("Solde compte ($)", 0.0, 300000.0, 100000.0)
-    
+        geography = st.selectbox("Pays", ["France", "Spain", "Germany"])
+
     with col2:
         salary = st.number_input("Salaire annuel ($)", 0.0, 500000.0, 50000.0)
         num_products = st.number_input("Nombre de produits", 1, 4, 2, help="Comptes, cartes, assurances...")
         has_credit_card = st.selectbox("Carte de crédit", ["Oui", "Non"])
         is_active = st.selectbox("Membre actif", ["Oui", "Non"], help="Utilise régulièrement ses services")
         gender = st.selectbox("Genre", ["Male", "Female"])
-        geography = st.selectbox("Pays", ["France", "Spain", "Germany"])
     
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -241,3 +242,21 @@ with tab2:
         # Données brutes optionnelles
         with st.expander("📋 Voir un échantillon des données"):
             st.dataframe(df_filtered.head(15), use_container_width=True)
+
+# ═══════════════════════════════════════════════════════════════
+# FOOTER 
+# ═══════════════════════════════════════════════════════════════
+
+st.divider()
+
+col1, col2 = st.columns([3, 1])
+
+with col1:
+    st.caption("Développé par Bilal Sayoud")
+
+with col2:
+    st.markdown(
+        "[LinkedIn](https://www.linkedin.com/in/bilalsayoud/) | "
+        "[GitHub](https://github.com/Bilelly)"
+    )
+
