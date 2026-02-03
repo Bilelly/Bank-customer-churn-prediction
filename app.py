@@ -259,4 +259,3 @@ with col2:
         "[LinkedIn](https://www.linkedin.com/in/bilalsayoud/) | "
         "[GitHub](https://github.com/Bilelly)"
     )
-
