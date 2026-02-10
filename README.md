@@ -78,9 +78,9 @@ Le projet suit une **démarche structurée en 5 notebooks** :
 
 | Métrique | Valeur |
 |--------|--------|
-| **F1-Score** | 0.729 |
-| **Recall** | 79.4 % |
-| **AUC** | 0.931 |
+| **F1-Score** | 0.634 |
+| **Recall** | 81.94 % |
+| **AUC** | 0.891 |
 
 
 <img width="1089" height="590" alt="image" src="https://github.com/user-attachments/assets/8e02fd13-c6ef-4440-8deb-5e8e78746d3b" />
@@ -107,29 +107,35 @@ En contexte de churn, il est **plus critique de ne pas manquer un client à risq
 
 ```text
 CHURN-PREDICTION-BANKING/
-├── data/
-│   ├── brut_data.csv        # Données brutes.
-│   ├── cleaned_data.csv     # Données après nettoyage.
-│   └── preprocessed_data.csv# Données prêtes pour le modèle.
-├── models/
-│   └── best_model.pkl       
-├── notebooks/
-│   ├── 01_data_exploration.ipynb    # Exploration des données et analyse descriptive.
-│   ├── 02_data_preprocessing.ipynb  # Transformations des features et sélection des modeles.
-│   ├── 03_data_modeling.ipynb       # Entraînement des modèles de base.
-│   ├── 04_model_optimisation.ipynb  # Tuning des hyperparamètres Optuna et GridsearchCV, faire une analyse sur l'équilibration.
-│   └── 05_model_explainability.ipynb # comprendre les feautures avec shap .
-├── report/              
-│   └── eda_report.html      
-├── src/                     
-│   ├── EvaluationFunction.py# Fonction standardisée pour calculer les métriques.
-│   ├── OptunaXGB.py         # Script pour l'optimisation des hyperparamètres d'XGBoost via Optuna.
-│   ├── RemoveOutliers.py    # Fonction pour gérer les valeurs aberrantes.
-│   └── ValidationCross.py   # Logique de validation croisée.
-├── .gitignore
 ├── app.py
 ├── README.md
-└── requirements.txt         
+├── requirements.txt
+├── STREAMLIT_README.md
+├── data/
+│   ├── brut_data.csv        # Données brutes
+│   ├── cleaned_data.csv     # Données après nettoyage
+│   └── preprocessed_data.csv# Données prêtes pour le modèle
+├── models/
+│   └── best_model.pkl       # modèle exporté 
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_data_modeling.ipynb
+│   ├── 04_model_optimisation.ipynb
+│   └── 05_model_explianability.ipynb
+├── report/
+│   └── eda_report.html
+├── src/
+│   ├── EvaluationFunction.py
+│   ├── helperfunction.py
+│   ├── PreprocessingFunction.py
+│   ├── RemoveOutliers.py
+│   └── ValidationCross.py
+├── .gitignore
+├── .streamlit/
+│   └── config.toml
+└── .devcontainer/
+  └── devcontainer.json
 ```
 ---
 
